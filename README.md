@@ -13,9 +13,8 @@
 | first_name         | string   | null: false               |
 | family_name_read   | string   | null: false               |
 | first_name_read    | string   | null: false               |
-| birth_year_id      | integer  | null: false               |
-| birth_month_id     | integer  | null: false               |
-| birth_date_id      | integer  | null: false               |
+| birth_date         | date     | null: false               |
+
 
 ### Association
 
