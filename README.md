@@ -4,15 +4,15 @@
 
 ## users テーブル
 
-| Column           | Type   | Options                   |
-| ---------------- | ------ | -----------               |
-| nickname         | string | null: false               |
-| email            | string | null: false, unique: true |
-| password         | string | null: false               |
-| family_name      | string | null: false               |
-| first_name       | string | null: false               |
-| family_name_read | string | null: false               |
-| first_name_read  | string | null: false               |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| family_name        | string | null: false               |
+| first_name         | string | null: false               |
+| family_name_read   | string | null: false               |
+| first_name_read    | string | null: false               |
 
 ### Association
 
@@ -25,7 +25,7 @@
 | ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
 | explain            | text       | null: false                    |
-| category           | integer    | null: false                    |
+| category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
 | shipping_charge_id | integer    | null: false                    |
 | shipment_source_id | integer    | null: false                    |
@@ -55,7 +55,7 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| postal_code     | integer    | null: false                    |
+| postal_code     | string     | null: false                    |
 | prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
