@@ -4,15 +4,18 @@
 
 ## users テーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| family_name        | string | null: false               |
-| first_name         | string | null: false               |
-| family_name_read   | string | null: false               |
-| first_name_read    | string | null: false               |
+| Column             | Type     | Options                   |
+| ------------------ | -------- | ------------------------- |
+| nickname           | string   | null: false               |
+| email              | string   | null: false, unique: true |
+| encrypted_password | string   | null: false               |
+| family_name        | string   | null: false               |
+| first_name         | string   | null: false               |
+| family_name_read   | string   | null: false               |
+| first_name_read    | string   | null: false               |
+| birth_year_id      | integer  | null: false               |
+| birth_month_id     | integer  | null: false               |
+| birth_date_id      | integer  | null: false               |
 
 ### Association
 
@@ -59,7 +62,7 @@
 | prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
-| building_number | string     | null: false                    |
+| building_number | string     |                                |
 | phone_number    | string     | null: false                    |
 | record          | references | null: false, foreign_key: true |
 
