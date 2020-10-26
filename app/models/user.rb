@@ -16,5 +16,8 @@ class User < ApplicationRecord
     validates :first_name_read,  format: { with: NAME_READ_REGEX }
     validates :birth_date
   end
+
+  has_many :items
+
 end
 
