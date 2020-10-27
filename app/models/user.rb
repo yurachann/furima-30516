@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
-    NAME_READ_REGEX = /\A[ァ-ヶー－]+\z/
+    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+    NAME_READ_REGEX = /\A[ァ-ヶー－]+\z/.freeze
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
     validates :nickname
-    validates :password,         format: { with: PASSWORD_REGEX}
+    validates :password,         format: { with: PASSWORD_REGEX }
     validates :family_name,      format: { with: NAME_REGEX }
     validates :first_name,       format: { with: NAME_REGEX }
     validates :family_name_read, format: { with: NAME_READ_REGEX }
@@ -18,6 +18,4 @@ class User < ApplicationRecord
   end
 
   has_many :items
-
 end
-
