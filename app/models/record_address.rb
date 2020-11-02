@@ -1,6 +1,6 @@
 class RecordAddress
   include ActiveModel::Model
-  attr_accessor :postal_code, :shipment_source_id, :city, :house_number, :building_number, :phone_number, :user_id, :item_id
+  attr_accessor :postal_code, :shipment_source_id, :city, :house_number, :building_number, :phone_number, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :postal_code,        format: {with: /\A\d{3}[-]\d{4}\z/}
@@ -8,6 +8,7 @@ class RecordAddress
     validates :city           
     validates :house_number    
     validates :phone_number,       format: {with: /\A\d{10,11}\z/}  
+    validates :token
   end
   
   def save
