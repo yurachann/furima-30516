@@ -13,6 +13,10 @@ RSpec.describe RecordAddress, type: :model do
       it '全ての値が存在すれば登録できる' do
         expect(@record_address).to be_valid
       end
+      it 'building_numberが存在しなくても登録できる' do
+        @record_address.building_number == ''
+        expect(@record_address).to be_valid
+      end
     end
 
     context '商品購入がうまくいかないとき' do
