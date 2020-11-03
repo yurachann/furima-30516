@@ -24,12 +24,12 @@ RSpec.describe RecordAddress, type: :model do
       it 'postal_codeに-がないと購入できない' do
         @record_address.postal_code = '1234567'
         @record_address.valid?
-        expect(@record_address.errors.full_messages).to include("Postal code is invalid")
+        expect(@record_address.errors.full_messages).to include('Postal code is invalid')
       end
       it 'postal_code半角数字以外だと購入できない' do
         @record_address.postal_code = '１２３-４５６７'
         @record_address.valid?
-        expect(@record_address.errors.full_messages).to include("Postal code is invalid")
+        expect(@record_address.errors.full_messages).to include('Postal code is invalid')
       end
       it 'shipment_source_idが空では登録できない' do
         @record_address.shipment_source_id = ''
@@ -39,7 +39,7 @@ RSpec.describe RecordAddress, type: :model do
       it 'shipment_source_idが1では登録できない' do
         @record_address.shipment_source_id = '1'
         @record_address.valid?
-        expect(@record_address.errors.full_messages).to include("Shipment source must be other than 1")
+        expect(@record_address.errors.full_messages).to include('Shipment source must be other than 1')
       end
       it 'cityが空では登録できない' do
         @record_address.city = ''
@@ -59,7 +59,7 @@ RSpec.describe RecordAddress, type: :model do
       it 'phone_numberが半角数字でないと登録できない' do
         @record_address.phone_number = '１２３４５６７８９０'
         @record_address.valid?
-        expect(@record_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@record_address.errors.full_messages).to include('Phone number is invalid')
       end
       it 'tokenが空では登録できない' do
         @record_address.token = ''
