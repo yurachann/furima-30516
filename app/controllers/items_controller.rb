@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
 
   def edit
     redirect_to action: :index unless current_user.id == @item.user_id
+    redirect_to action: :index if Record.exists?(item_id: @item.id)
   end
 
   def update
@@ -36,6 +37,7 @@ class ItemsController < ApplicationController
 
   def destroy
     redirect_to action: :index unless current_user.id == @item.user_id
+    redirect_to action: :index if Record.exists?(item_id: @item.id)
     @item.destroy
     redirect_to items_path
   end

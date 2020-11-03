@@ -4,6 +4,7 @@ class RecordsController < ApplicationController
 
   def index
     redirect_to root_path if current_user.id == @item.user_id
+    redirect_to root_path if Record.exists?(item_id: @item.id)
     @record_address = RecordAddress.new
   end
 
