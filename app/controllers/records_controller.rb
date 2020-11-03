@@ -3,8 +3,7 @@ class RecordsController < ApplicationController
   before_action :set_item
 
   def index
-    redirect_to root_path if current_user.id == @item.user_id
-    redirect_to root_path if Record.exists?(item_id: @item.id)
+    return redirect_to root_path if current_user.id == @item.user_id || @item.record != nil
     @record_address = RecordAddress.new
   end
 
